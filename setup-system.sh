@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 #Disable iTunes backups
 defaults write com.apple.iTunes DeviceBackupsDisabled -bool true

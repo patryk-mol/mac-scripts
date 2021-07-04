@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Inspect what's deleted before running. Run with sudo.
-# Note: Go thorugh Application Support directory manually since many of your apps might occupy a lot of space they don't have to
+# Note: Go through Application Support directory manually since many of your apps might occupy a lot of space they don't have to
 
 # General stuff
 rm -rf /Incompatible\ Software
