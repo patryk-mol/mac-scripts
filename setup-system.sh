@@ -40,7 +40,29 @@ brew install \
   zsh-autosuggestions \
   zsh-syntax-highlighting \
   gzdoom \
-  amethyst
+  amethyst \
+  fzf \
+  fd \
+  mas \
+  node
+
+brew install robotsandpencils/made/xcodes
+brew link xcodes
+brew install --cask xcodes sonixd
+xcodes install --latest
+
+# Install apps from App Store
+#
+# App IDs correspond to the following apps:
+# 1575557335 - Kaleidoscope 3
+# 1450874784 - Transporter
+# 640199958 - Apple Developer
+# 899247664 - TestFlight
+
+mas install 1575557335 \
+  1450874784 \
+  640199958 \
+  899247664
   
 # Cheat.sh
 curl https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh
