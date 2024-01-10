@@ -8,8 +8,7 @@ sudo /usr/sbin/DevToolsSecurity --enable
 
 # Install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> .zprofile
-zsh
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew install \
   bitwarden \
@@ -44,11 +43,30 @@ brew install \
   fzf \
   fd \
   mas \
-  node
+  node \
+  xcodes \
+  libreoffice \
+  openscad \
+  freecad \
+  xcodes \
+  sonixd \
+  mediainfo \
+  prusaslicer \
+  musicbrainz-picard \
+  sequel-ace \
+  ranger \
+  android-studio \
+  gimp \
+  nextcloud \
+  syncthing \
+  obsidian \
+  notunes \
+  commander-one \
+  shntool
 
-brew install robotsandpencils/made/xcodes
-brew link xcodes
-brew install --cask xcodes sonixd
+brew install --cask xcodes
+brew services start syncthing
+
 xcodes install --latest
 
 # Install apps from App Store
@@ -58,11 +76,16 @@ xcodes install --latest
 # 1450874784 - Transporter
 # 640199958 - Apple Developer
 # 899247664 - TestFlight
+# 1451685025 - WireGuard
+# 441258766 - Magnet
 
-mas install 1575557335 \
+mas install \
+  1575557335 \
   1450874784 \
   640199958 \
-  899247664
+  899247664 \
+  1451685025 \
+  441258766
   
 # Cheat.sh
 curl https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh
