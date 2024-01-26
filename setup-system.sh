@@ -6,6 +6,9 @@ defaults write com.apple.iTunes DeviceBackupsDisabled -bool true
 # Enable developer mode
 sudo /usr/sbin/DevToolsSecurity --enable
 
+# Create dir structure
+cd ~
+mkdir 3d-printing Projects NAS Random tmp
 # Install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
