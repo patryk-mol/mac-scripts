@@ -14,6 +14,7 @@ mkdir 3d-printing Projects NAS Random tmp
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew install \
+  nano \
   bitwarden \
   iterm2 \
   sublime-text \
@@ -24,7 +25,6 @@ brew install \
   balenaetcher \
   spotify \
   vlc \
-  mpv \
   steam \
   skype \
   onlyoffice \
@@ -53,7 +53,6 @@ brew install \
   freecad \
   xcodes \
   sonixd \
-  mediainfo \
   prusaslicer \
   musicbrainz-picard \
   sequel-ace \
@@ -65,9 +64,18 @@ brew install \
   obsidian \
   notunes \
   commander-one \
+  cmatrix \
+  zed \
   shntool
 
-brew install --cask xcodes
+brew install --cask \
+  fluent-reader \
+  mediainfo \
+  mkvtoolnix-gui \
+  mkvtoolnix \
+  xcodes \
+  mpv
+
 brew services start syncthing
 
 xcodes install --latest
