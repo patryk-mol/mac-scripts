@@ -29,7 +29,7 @@ brew install \
   skype \
   onlyoffice \
   midnight-commander \
-  exa \
+  eza \
   bat \
   ripgrep \
   git-delta \
