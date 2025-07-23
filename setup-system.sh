@@ -1,80 +1,138 @@
 #!/bin/zsh
 
+# Enable developer mode
+sudo /usr/sbin/DevToolsSecurity --enable
+
+# Disable turning on when opening a lid or connecting power cable
+sudo nvram BootPreference=%00
+
 # Disable iTunes backups
 defaults write com.apple.iTunes DeviceBackupsDisabled -bool true
 
-# Enable developer mode
-sudo /usr/sbin/DevToolsSecurity --enable
+# Prevent macOS writing .DS_Store files on network shares
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+
+# Make list view the default in Finder
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Set default list view settings for new folders
+defaults write com.apple.finder FK_StandardViewSettings -dict-add ListViewSettings '{ "columns" = ( { "ascending" = 1; "identifier" = "name"; "visible" = 1; "width" = 300; }, { "ascending" = 0; "identifier" = "dateModified"; "visible" = 1; "width" = 181; }, { "ascending" = 0; "identifier" = "size"; "visible" = 1; "width" = 97; } ); "iconSize" = 16; "showIconPreview" = 0; "sortColumn" = "name"; "textSize" = 12; "useRelativeDates" = 1; }'
+    
+# Clear existing folder view settings to force use of default settings
+defaults delete com.apple.finder FXInfoPanesExpanded 2>/dev/null || true
+defaults delete com.apple.finder FXDesktopVolumePositions 2>/dev/null || true
+
+# Set list view for all view types
+defaults write com.apple.finder FK_StandardViewSettings -dict-add ExtendedListViewSettings '{ "columns" = ( { "ascending" = 1; "identifier" = "name"; "visible" = 1; "width" = 300; }, { "ascending" = 0; "identifier" = "dateModified"; "visible" = 1; "width" = 181; }, { "ascending" = 0; "identifier" = "size"; "visible" = 1; "width" = 97; } ); "iconSize" = 16; "showIconPreview" = 0; "sortColumn" = "name"; "textSize" = 12; "useRelativeDates" = 1; }'
+    
+# Sets default search scope to the current folder
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# Remove .DS_Store files to reset folder view settings
+find ~ -name ".DS_Store" -type f -delete 2>/dev/null || true
+
+# Show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Set the sidebar icon size to small
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
+
+# Show status bar in Finder
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Show path bar in Finder
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Restart Finder to apply changes
+killall Finder
+
+# Fix Missions control to never rearrange spaces
+defaults write com.apple.dock mru-spaces -bool false
+
+# Disable Apple Intelligence
+defaults write com.apple.CloudSubscriptionFeatures.optIn "545129924" -bool "false"
 
 # Create dir structure
 cd ~
 mkdir 3d-printing Projects NAS Random tmp
+
 # Install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew install \
-  nano \
-  bitwarden \
-  iterm2 \
-  sublime-text \
-  brave-browser \
-  firefox \
-  vscodium \
-  fork \
-  balenaetcher \
-  spotify \
-  vlc \
-  steam \
-  skype \
-  onlyoffice \
-  midnight-commander \
-  eza \
-  bat \
-  ripgrep \
-  git-delta \
-  bottom \
-  procs \
   bandwhich \
-  tealdeer \
-  neovim \
-  starship \
-  zsh-autosuggestions \
-  zsh-syntax-highlighting \
-  gzdoom \
-  amethyst \
-  fzf \
-  fd \
-  mas \
-  node \
-  xcodes \
-  libreoffice \
-  openscad \
-  freecad \
-  xcodes \
-  sonixd \
-  prusaslicer \
-  musicbrainz-picard \
-  sequel-ace \
-  ranger \
-  android-studio \
-  gimp \
-  nextcloud \
-  syncthing \
-  obsidian \
-  notunes \
-  commander-one \
+  bat \
+  bottom \
   cmatrix \
-  zed \
-  shntool
+  eza \
+  fd \
+  flac \
+  fzf \
+  git-delta \
+  glow \
+  hugo \
+  mailsy \
+  mas \
+  media-info \
+  midnight-commander \
+  nano \
+  neovim \
+  procs \
+  ranger \
+  ripgrep \
+  shntool \
+  starship \
+  syncthing \
+  tealdeer \
+  xcodes \
+  zsh-autosuggestions \
+  zsh-syntax-highlighting
 
 brew install --cask \
+  amethyst \
+  android-studio \
+  balenaetcher \
+  bitwarden \
+  brave-browser \
+  commander-one \
+  firefox \
   fluent-reader \
+  fork \
+  freac \
+  freecad \
+  gimp \
+  google-chrome \
+  gzdoom \
+  iterm2 \
+  keka \
+  libreoffice \
   mediainfo \
-  mkvtoolnix-gui \
-  mkvtoolnix \
-  xcodes \
-  mpv
+  mkvtoolnix-app \
+  musicbrainz-picard \
+  nextcloud \
+  notunes \
+  obs \
+  obsidian \
+  onlyoffice \
+  onyx \
+  openscad \
+  pinta \
+  prusaslicer \
+  sequel-ace \
+  signal \
+  sonixd \
+  spotify \
+  stats \
+  steam \
+  stolendata-mpv \
+  sublime-text \
+  utm \
+  vlc \
+  vscodium \
+  xcodes-app \
+  zed \
+  zotero
 
 brew services start syncthing
 
