@@ -160,9 +160,11 @@ curl https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh
 sudo chmod +x /usr/local/bin/cht.sh
 
 # NSF shares
+sudo echo "10.23.0.40:/mnt/user/backups /Users/pmol/NAS/Backups nfs defaults,timeo=900,retrans=5,_netdev 0 0" | sudo tee -a /etc/fstab
 sudo echo "10.23.0.40:/mnt/user/books /Users/pmol/NAS/Books nfs defaults,timeo=900,retrans=5,_netdev 0 0" | sudo tee -a /etc/fstab
 sudo echo "10.23.0.40:/mnt/user/general /Users/pmol/NAS/General nfs defaults,timeo=900,retrans=5,_netdev 0 0" | sudo tee -a /etc/fstab
 sudo echo "10.23.0.40:/mnt/user/movies /Users/pmol/NAS/Movies nfs defaults,timeo=900,retrans=5,_netdev 0 0" | sudo tee -a /etc/fstab
 sudo echo "10.23.0.40:/mnt/user/music /Users/pmol/NAS/Music nfs defaults,timeo=900,retrans=5,_netdev 0 0" | sudo tee -a /etc/fstab
 sudo echo "10.23.0.40:/mnt/user/tv /Users/pmol/NAS/TV nfs defaults,timeo=900,retrans=5,_netdev 0 0" | sudo tee -a /etc/fstab
 sudo echo "10.23.0.40:/mnt/disks/download /Users/pmol/NAS/Download nfs defaults,timeo=900,retrans=5,_netdev 0 0" | sudo tee -a /etc/fstab
+
