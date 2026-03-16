@@ -70,6 +70,7 @@ brew install \
   flac \
   fzf \
   git-delta \
+  git-lfs \
   glow \
   hugo \
   mailsy \
@@ -117,7 +118,9 @@ brew install --cask \
   onlyoffice \
   onyx \
   openscad \
+  orcaslicer \
   pinta \
+  proxyman \
   prusaslicer \
   sequel-ace \
   signal \
@@ -131,7 +134,6 @@ brew install --cask \
   vlc \
   vscodium \
   xcodes-app \
-  zed \
   zotero
 
 brew services start syncthing
@@ -141,14 +143,12 @@ xcodes install --latest
 # Install apps from App Store
 #
 # App IDs correspond to the following apps:
-# 1575557335 - Kaleidoscope 3
 # 1450874784 - Transporter
 # 640199958 - Apple Developer
 # 899247664 - TestFlight
 # 1451685025 - WireGuard
 # 441258766 - Magnet
 mas install \
-  1575557335 \
   1450874784 \
   640199958 \
   899247664 \
