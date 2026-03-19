@@ -124,7 +124,6 @@ brew install --cask \
   prusaslicer \
   sequel-ace \
   signal \
-  sonixd \
   spotify \
   stats \
   steam \
