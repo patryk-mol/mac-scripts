@@ -86,6 +86,7 @@ brew install \
   starship \
   syncthing \
   tealdeer \
+  tree-sitter-cli \
   xcodes \
   zsh-autosuggestions \
   zsh-syntax-highlighting
@@ -165,5 +166,5 @@ sudo echo "10.23.0.40:/mnt/user/general /Users/pmol/NAS/General nfs defaults,tim
 sudo echo "10.23.0.40:/mnt/user/movies /Users/pmol/NAS/Movies nfs defaults,timeo=900,retrans=5,_netdev 0 0" | sudo tee -a /etc/fstab
 sudo echo "10.23.0.40:/mnt/user/music /Users/pmol/NAS/Music nfs defaults,timeo=900,retrans=5,_netdev 0 0" | sudo tee -a /etc/fstab
 sudo echo "10.23.0.40:/mnt/user/tv /Users/pmol/NAS/TV nfs defaults,timeo=900,retrans=5,_netdev 0 0" | sudo tee -a /etc/fstab
-sudo echo "10.23.0.40:/mnt/disks/download /Users/pmol/NAS/Download nfs defaults,timeo=900,retrans=5,_netdev 0 0" | sudo tee -a /etc/fstab
+sudo echo "10.23.0.40:/mnt/download /Users/pmol/NAS/Download nfs defaults,timeo=900,retrans=5,_netdev 0 0" | sudo tee -a /etc/fstab
 
