@@ -17,14 +17,14 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Set default list view settings for new folders
 defaults write com.apple.finder FK_StandardViewSettings -dict-add ListViewSettings '{ "columns" = ( { "ascending" = 1; "identifier" = "name"; "visible" = 1; "width" = 300; }, { "ascending" = 0; "identifier" = "dateModified"; "visible" = 1; "width" = 181; }, { "ascending" = 0; "identifier" = "size"; "visible" = 1; "width" = 97; } ); "iconSize" = 16; "showIconPreview" = 0; "sortColumn" = "name"; "textSize" = 12; "useRelativeDates" = 1; }'
-    
+
 # Clear existing folder view settings to force use of default settings
 defaults delete com.apple.finder FXInfoPanesExpanded 2>/dev/null || true
 defaults delete com.apple.finder FXDesktopVolumePositions 2>/dev/null || true
 
 # Set list view for all view types
 defaults write com.apple.finder FK_StandardViewSettings -dict-add ExtendedListViewSettings '{ "columns" = ( { "ascending" = 1; "identifier" = "name"; "visible" = 1; "width" = 300; }, { "ascending" = 0; "identifier" = "dateModified"; "visible" = 1; "width" = 181; }, { "ascending" = 0; "identifier" = "size"; "visible" = 1; "width" = 97; } ); "iconSize" = 16; "showIconPreview" = 0; "sortColumn" = "name"; "textSize" = 12; "useRelativeDates" = 1; }'
-    
+
 # Sets default search scope to the current folder
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
@@ -80,6 +80,7 @@ brew install \
   nano \
   neovim \
   procs \
+  pv \
   ranger \
   ripgrep \
   shntool \
@@ -118,7 +119,7 @@ brew install --cask \
   obsidian \
   onlyoffice \
   onyx \
-  openscad \
+  openscad@snapshot \
   orcaslicer \
   pinta \
   proxyman \
@@ -154,7 +155,7 @@ mas install \
   899247664 \
   1451685025 \
   441258766
-  
+
 # Cheat.sh
 curl https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh
 sudo chmod +x /usr/local/bin/cht.sh
@@ -167,4 +168,3 @@ sudo echo "10.23.0.40:/mnt/user/movies /Users/pmol/NAS/Movies nfs defaults,timeo
 sudo echo "10.23.0.40:/mnt/user/music /Users/pmol/NAS/Music nfs defaults,timeo=900,retrans=5,_netdev 0 0" | sudo tee -a /etc/fstab
 sudo echo "10.23.0.40:/mnt/user/tv /Users/pmol/NAS/TV nfs defaults,timeo=900,retrans=5,_netdev 0 0" | sudo tee -a /etc/fstab
 sudo echo "10.23.0.40:/mnt/download /Users/pmol/NAS/Download nfs defaults,timeo=900,retrans=5,_netdev 0 0" | sudo tee -a /etc/fstab
-
