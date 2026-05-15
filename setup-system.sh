@@ -52,6 +52,9 @@ defaults write com.apple.dock mru-spaces -bool false
 # Disable Apple Intelligence
 defaults write com.apple.CloudSubscriptionFeatures.optIn "545129924" -bool "false"
 
+# Fix blurry fonts
+defaults -currentHost write -g AppleFontSmoothing -int 1
+
 # Create dir structure
 cd ~
 mkdir 3d-printing Projects NAS Random tmp
