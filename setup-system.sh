@@ -82,6 +82,7 @@ brew install \
   midnight-commander \
   nano \
   neovim \
+  openjdk \
   procs \
   pv \
   ranger \
@@ -102,6 +103,7 @@ brew install --cask \
   bitwarden \
   brave-browser \
   commander-one \
+  dbeaver-community \
   firefox \
   fluent-reader \
   fork \
