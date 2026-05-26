@@ -125,6 +125,7 @@ brew install --cask \
   onlyoffice \
   onyx \
   openscad@snapshot \
+  open-video-downloader \
   orcaslicer \
   pinta \
   proxyman \
