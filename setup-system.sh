@@ -64,6 +64,7 @@ mkdir 3d-printing Projects NAS Random tmp
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew install \
+  android-platform-tools \
   bandwhich \
   bat \
   bottom \
