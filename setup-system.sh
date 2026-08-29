@@ -71,11 +71,13 @@ brew install \
   cmatrix \
   eza \
   fd \
+  ffmpeg \
   flac \
   fzf \
   git-delta \
   git-lfs \
   glow \
+  hf \
   hugo \
   mailsy \
   mas \
@@ -116,6 +118,8 @@ brew install --cask \
   iterm2 \
   keka \
   libreoffice \
+  lm-studio \
+  lm-studio-bionic \
   mediainfo \
   mkvtoolnix-app \
   musicbrainz-picard \
@@ -125,6 +129,7 @@ brew install --cask \
   obsidian \
   onlyoffice \
   onyx \
+  openlogi \
   openscad@snapshot \
   open-video-downloader \
   orcaslicer \
@@ -138,6 +143,7 @@ brew install --cask \
   steam \
   stolendata-mpv \
   sublime-text \
+  uhk-agent \
   utm \
   vlc \
   vscodium \
@@ -162,6 +168,14 @@ mas install \
   899247664 \
   1451685025 \
   441258766
+
+# Setup Python venv
+cd ~
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Python packages
+pip3 install mlx-whisper
 
 # Cheat.sh
 curl https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh
